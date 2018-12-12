@@ -1,0 +1,88 @@
+div .border2{
+    display: inline-block;
+    border: 2px solid black;
+}
+
+div p{
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+.middle1{
+    height: 100px;
+}
+
+nav div div.middle2{
+    height: 50px;
+}
+
+nav div div.middle2 div button{
+    margin-left: 25%;
+}
+
+h4 {
+    margin-bottom: 0px;
+    margin-right:center;
+    display: inline-block;}
+
+body{
+    padding-top:10px
+}
+ol {
+    padding: 5px 5px 5px 25px
+}
+
+/*Goals List*/
+li input{
+    line-height:30px;
+    font-size: 100%;
+    margin: 5px;
+    padding:0px 5px;
+}
+
+#timer {
+    display: inline-block;
+    margin-left: 3%;
+    font-size:50px;
+    font-size-adjust:auto;
+}
+
+.cbox{
+    margin:1px;
+/* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+}
+
+div.session_box{
+    text-align:center;
+    padding:5px;
+}
+
+
+div.time_box div.border2{
+    border-radius: 5px;
+    padding: 0px 5px 0px 5px;
+    overflow: auto;
+}
+
+div input.time_adjust {
+    display:inline-block;
+    width: 45px;
+    height: 35px;
+    text-align:right;
+    float:right;
+    border-radius: 5px;
+    position: relative;
+    margin: 5px 0px;
+}
+
+div.time_box p {
+    display: inline-block;
+    position:relative;
+    margin-bottom: 0px;
+    text-align: right;
+    float:right;
+}

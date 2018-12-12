@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pomodoro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Goals for Pomodoro -->
+  <nav>
+    <div class="container-fluid">
+      <div class="row top">
+        <div class="col-lg-4">
+          <ol class="border2">
+              <h4>Goals List</h4>
+            <li>
+              <input type="text" id="goal" placeholder="Goal 1"> <input class="cbox" type="checkbox" name="cbox1">
+            </li>
+            <li>
+              <input type="text" id="goal" placeholder="Goal 2"> <input class="cbox" type="checkbox" name="cbox2">
+            </li>
+            <li>
+              <input type="text" id="goal" placeholder="Goal 3"> <input class="cbox" type="checkbox" name="cbox3">
+            </li>
+            <li>
+              <input type="text" id="goal" placeholder="Goal 4"> <input class="cbox" type="checkbox" name="cbox4">
+            </li>
+            <li>
+              <input type="text" id="goal" placeholder="Goal 5"> <input class="cbox" type="checkbox" name="cbox5">
+            </li>
+          </ol>
+        </div>
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            <div class="session_box border2">
+                <p >Current Session</p>
+                <h4 id="session"></h4>
+            </div>
+        </div>
+      </div>
+        <div class="row middle1">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+            <p id="timer">00 : 00 : 00</p>
+          </div>
+        </div>
+        <div class="row middle2">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-4">
+            <button id="play_butt">Play/Pause</button>
+          </div>
+        </div>
+        <div class="row bottom">
+          <div class="col-lg-8">
+          </div>
+          <div class="col-lg-3 time_box">
+            <div class="border2">
+                <table>
+                    <tr>
+                       <td>
+                        <p>Session Length</p>
+                      </td>
+                      <td>
+                        <input type="number" name="session_length" class="time_adjust" min="0" max="99" placeholder="0.1" value="0.1">
+                      </td>
+                    </tr>
+                    <tr>
+                       <td>
+                         <p>Short Break Length</p>  
+                       </td> 
+                        <td>
+                         <input type="number" name="sbreak_lenght" class="time_adjust" min="0" max="99" placeholder="5" value="5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                          <p>Long Break Length</p>
+                        </td>
+                        <td>
+                          <input type="number" name="lbreak_length" class="time_adjust" min="0" max="99" placeholder="25">
+                        </td>
+                    </tr>          
+                </table>
+
+                
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </nav>    
+    
+   
+
+
+</body>
+    <script src="../script/script.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+</html>
+
