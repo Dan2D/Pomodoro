@@ -1,4 +1,11 @@
-window.onload = checking_checks
+/*window.onload = checking_checks
+
+
+//https://codepen.io/mythicalpizza/pen/WvdeJG (FOR LATER REFERNCE)
+
+//Basic Timer 
+var time_set = { 
+
 
 var goal_check = document.querySelectorAll("#goal");
 var check = document.querySelectorAll("input[type=checkbox]");
@@ -7,13 +14,12 @@ var session_count = 0 ;
 var x = 0;
 var z = 0;
 var name = "";
-
-
-//Tracker for breaks and work
-function count(){
-    session_count += 1;}
-
-
+//On Click starts CountDown
+play.addEventListener('click', function(){
+    z++;
+    countdown();})   
+    
+    
 //Checks if checkbox is checked if it is then the task is completed and the goal is struk through
 function checking_checks(){
     var goal_check = document.querySelectorAll("#goal");
@@ -24,16 +30,13 @@ function checking_checks(){
                     goal_check[i].style.textDecoration = "line-through";}
                 else {
                     goal_check[i].style.textDecoration = "none";}})}}
+    
+    //Tracker for breaks and work
+function count(){
+    session_count += 1;}
 
 
-//On Click starts CountDown
-play.addEventListener('click', function(){
-    z++;
-    countdown();})
-
-
-//Basic Timer 
-function countdown(){
+    function countdown(){
     for (i=0; i < 5; i++) {
             if (session_count % 2 == 1){
                 if (session_count == 5){
@@ -55,12 +58,10 @@ function countdown(){
             session_name = "Unknown";}
         document.getElementById('play_butt').innerHTML = "Start " + session_name + "?";     
         document.getElementById("session").innerHTML = session_name
-                         
-    function hms (){
-    var hours = addZero(Math.floor((time_diff%(1000*60*60*24))/(1000*60*60)));
-    var minutes = addZero(Math.floor((time_diff%(1000*60*60))/(1000*60)));
-    var seconds = addZero(Math.floor((time_diff%(1000*60))/1000));
-    }
+    
+   
+    
+    
     //Get timer for session first when play button is hit
     //Have to set it outside interval timer
         var session_length = document.querySelectorAll('.time_adjust')
@@ -72,10 +73,12 @@ function countdown(){
         return i;}
     
     //document.getElementById("timer").innerHTML = 
-        
+
     
 var time = setInterval(function(){
     var current_time = new Date().getTime();
+    
+  
     
     addZero()
     //alert(countdown_time + "    " + current_time);
@@ -84,6 +87,14 @@ var time = setInterval(function(){
     var minutes = addZero(Math.floor((time_diff%(1000*60*60))/(1000*60)));
     var seconds = addZero(Math.floor((time_diff%(1000*60))/1000));
     
+   //Pause          
+    if (z % 2 == 0 && time_diff > 0){
+    var pause_time = new Date().getTime();
+    var pause_show = document.getElementById("timer").innerHTML;
+    clearInterval(time);
+    document.getElementById("timer").innerHTML = pause_show;
+    return;}
+
     if (time_diff <= 0){
         hours = '00';
         minutes = '00';
@@ -92,7 +103,95 @@ var time = setInterval(function(){
         count()};
     //need to keep track of set count to switch to s_break or l_break
      document.getElementById("timer").innerHTML =  hours + " : " + minutes + " : " + seconds;                  
-})}
+})}}*/
+var sec, min, hr, count, start_time, end_time, time_diff
+var play = document.getElementById("play_butt");
+var ticker = document.getElementById("ticker");
+
+//This acts as a list of functions
+var timer = {
+    //Starts the timer
+    start : function(){
+        if (play.innerHTML != "Start"){
+                timer.pause();
+                return;
+            }
+        else if (play.innerHTML === "Start"){
+                play.innerHTML = "Pause";
+            }
+        var ticker_time = ticker.innerHTML.split(" ");
+        var resume_time = ((ticker_time[2]*60) + (ticker_time[4]))*1000
+        
+        sec = 0;
+        min = 0;
+        hr = 0;
+        
+        if (resume_time != 0) {
+            end_time = new Date().getTime() + resume_time;
+        }
+        else{
+            end_time = new Date().getTime() + 10000;
+        }
+        /*+ (session_length[x].value*60*1000);*/
+        
+        
+        count = setInterval(function() {
+            start_time = new Date().getTime();
+            time_diff = end_time - start_time;
+            sec = timer.convert_s(time_diff);
+            min = timer.convert_m(time_diff);
+            hr = timer.convert_h(time_diff);
+            
+            tick_sec = timer.add_Zero(sec);
+            tick_min = timer.add_Zero(min);
+            tick_hr = timer.add_Zero(hr);
+            
+            
+            timer.update(tick_hr + " : " + tick_min + " : " + tick_sec);
+            if (time_diff <= 0){
+                clearInterval(count);
+                play.innerHTML = "Start";
+            }
+        })
+    },                        
+ 
+    convert_s : function(time){
+        var t;
+        t = Math.floor((time%(1000*60))/1000);
+        return t;
+    },
+    convert_m : function(time){
+        var t;
+        t = Math.floor((time%(1000*60*60))/(1000*60));
+        return t;
+    },
+    convert_h : function(time){
+        var t;
+        t = Math.floor((time%(1000*60*60*24))/(1000*60*60));
+        return t;
+    },
+    
+    add_Zero : function(time_alt){
+        var temp
+        if (time_alt < 10){
+            temp = "0" + time_alt;
+        }
+        else{
+            temp = time;
+        }
+        return temp;
+    },
+    
+    pause: function(){
+        clearInterval(count);
+        play.innerHTML = "Start";
+        
+    },
+    update : function(tick_text){
+        ticker.innerHTML = tick_text;
+},
+
+    }
 
 
 
