@@ -105,8 +105,63 @@ var time = setInterval(function(){
      document.getElementById("timer").innerHTML =  hours + " : " + minutes + " : " + seconds;                  
 })}}*/
 var sec, min, hr, count, start_time, end_time, time_diff
+var counter = 0;
 var play = document.getElementById("play_butt");
 var ticker = document.getElementById("ticker");
+var check = document.querySelectorAll("input[type=checkbox]");
+var goal_check = document.querySelectorAll("#goal");
+var session = document.getElementById("session");
+var session_length = document.querySelectorAll(".time_adjust");
+
+window.onload = function(){
+    checking_checks();
+}
+
+
+var session_assign = function(){
+    if (counter === 5){
+        session_name = "Long Break";
+        x = 2;
+        }
+    else if (counter % 2 === 1){
+        session_name = "Short Break";
+        x = 1;
+    }
+    else { 
+        for (i=0; i < 5; i++) {
+            if (check[i].checked == false){
+                var session_name = goal_check[i].value;
+                x=0;
+                break;
+            }
+        }
+        
+        if (session_name === ""){
+            session_name = "Thinking..."
+        }
+    }    
+    session.innerHTML = session_name}
+
+
+//Assign Event Listener to Checks
+var checking_checks = function(){
+    for (i=0; i<5; i++){
+        check[i].addEventListener('change', () => {
+            crossout();
+        })
+    }
+}
+            
+//Crossing out goals that have been checked/completed            
+var crossout = function(){
+    for (i=0; i < 5; i++)
+        if (check[i].checked == true){
+            goal_check[i].style.textDecoration = "line-through";
+        }
+        else {
+            goal_check[i].style.textDecoration = "none";
+        }
+    }
 
 //This acts as a list of functions
 var timer = {
@@ -118,6 +173,7 @@ var timer = {
             }
         else if (play.innerHTML === "Start"){
                 play.innerHTML = "Pause";
+                session_assign();
             }
         var ticker_time = ticker.innerHTML.split(" ");
         var resume_time = ((ticker_time[2]*60) + (ticker_time[4]))*1000
@@ -130,9 +186,8 @@ var timer = {
             end_time = new Date().getTime() + resume_time;
         }
         else{
-            end_time = new Date().getTime() + 10000;
+            end_time = new Date().getTime() + (session_length[x].value*60*1000);
         }
-        /*+ (session_length[x].value*60*1000);*/
         
         
         count = setInterval(function() {
@@ -148,9 +203,11 @@ var timer = {
             
             
             timer.update(tick_hr + " : " + tick_min + " : " + tick_sec);
-            if (time_diff <= 0){
+
+            if (time_diff <= 50){
                 clearInterval(count);
-                play.innerHTML = "Start";
+                play.innerHTML = "Start"
+                counter +=1;
             }
         })
     },                        
@@ -177,21 +234,22 @@ var timer = {
             temp = "0" + time_alt;
         }
         else{
-            temp = time;
+            temp = time_alt;
         }
         return temp;
     },
-    
+  //fixed 0 pause bug by limiting pause funcitonality wrt time_diff  
     pause: function(){
-        clearInterval(count);
-        play.innerHTML = "Start";
-        
+         if(time_diff>1000){
+            clearInterval(count);
+            play.innerHTML = "Start";
+        }
     },
     update : function(tick_text){
         ticker.innerHTML = tick_text;
-},
+    },
 
-    }
+}
 
 
 
