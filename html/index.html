@@ -13,7 +13,7 @@
     <div class="container-fluid">
       <div class="row top">
         <div class="col-lg-4">
-          <ol class="border2">
+          <ol>
               <h4>Goals List</h4>
             <li>
               <input type="text" id="goal" placeholder="Goal 1"> <input class="cbox" type="checkbox" name="cbox1">
@@ -32,9 +32,9 @@
             </li>
           </ol>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="session_box border2">
                 <p >Current Session</p>
                 <h4 id="session"></h4>
@@ -44,19 +44,19 @@
         <div class="row middle1">
           <div class="col-lg-4">
           </div>
-          <div class="col-lg-4">
-            <p id="ticker">00 : 00 : 00</p>
+          <div class="col-lg-5">
+            <p id="ticker" class="border2">00 : 00 : 00</p>
           </div>
         </div>
         <div class="row middle2">
           <div class="col-lg-4">
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-5">
             <button id="play_butt" onclick="timer.start()">Start</button>
           </div>
         </div>
         <div class="row bottom">
-          <div class="col-lg-8">
+          <div class="col-lg-9">
           </div>
           <div class="col-lg-3 time_box">
             <div class="border2">
@@ -66,7 +66,7 @@
                         <p>Session Length</p>
                       </td>
                       <td>
-                        <input type="number" name="session_length" class="time_adjust" min="0" max="99" placeholder="0.1" value="0.1">
+                        <input type="number" name="session_length" class="time_adjust" min="0" max="99" value="25">
                       </td>
                     </tr>
                     <tr>
@@ -74,7 +74,7 @@
                          <p>Short Break Length</p>  
                        </td> 
                         <td>
-                         <input type="number" name="sbreak_lenght" class="time_adjust" min="0" max="99" placeholder="0.08" value="0.08">
+                         <input type="number" name="sbreak_lenght" class="time_adjust" min="0" max="99" value="5">
                         </td>
                     </tr>
                     <tr>
@@ -82,7 +82,7 @@
                           <p>Long Break Length</p>
                         </td>
                         <td>
-                          <input type="number" name="lbreak_length" class="time_adjust" min="0" max="99" placeholder="0.2" value="0.2">
+                          <input type="number" name="lbreak_length" class="time_adjust" min="0" max="99" value="20">
                         </td>
                     </tr>          
                 </table>

@@ -1,6 +1,8 @@
 div .border2{
     display: inline-block;
-    border: 2px solid black;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 div p{
@@ -14,10 +16,16 @@ div p{
 
 nav div div.middle2{
     height: 50px;
+    position: relative;
 }
 
 nav div div.middle2 div button{
-    margin-left: 25%;
+    position:relative;
+    display: block;
+    width:100px;
+    left:50%;
+    margin-left: -50px;
+    
 }
 
 h4 {
@@ -29,7 +37,10 @@ body{
     padding-top:10px
 }
 ol {
-    padding: 5px 5px 5px 25px
+    padding: 5px 5px 5px 25px;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 /*Goals List*/
@@ -42,7 +53,10 @@ li input{
 
 #ticker {
     display: inline-block;
-    margin-left: 3%;
+    width: 260px;
+    position: relative;
+    left: 50%;
+    margin-left:-130px;
     font-size:50px;
     font-size-adjust:auto;
 }
@@ -59,6 +73,10 @@ li input{
 div.session_box{
     text-align:center;
     padding:5px;
+    position: absolute;
+    width: 150px;
+    left:50%;
+    margin-left:-75px; ;
 }
 
 
@@ -66,6 +84,10 @@ div.time_box div.border2{
     border-radius: 5px;
     padding: 0px 5px 0px 5px;
     overflow: auto;
+    position:relative;
+    width: 200px;
+    left:50%;
+    margin-left: -100px;
 }
 
 div input.time_adjust {

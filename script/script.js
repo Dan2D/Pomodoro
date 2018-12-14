@@ -167,11 +167,11 @@ var crossout = function(){
 var timer = {
     //Starts the timer
     start : function(){
-        if (play.innerHTML != "Start"){
+        if (play.innerHTML === "Pause"){
                 timer.pause();
                 return;
             }
-        else if (play.innerHTML === "Start"){
+        else if (play.innerHTML === "Start" || play.innerHTML === "Resume"){
                 play.innerHTML = "Pause";
                 session_assign();
             }
@@ -242,7 +242,7 @@ var timer = {
     pause: function(){
          if(time_diff>1000){
             clearInterval(count);
-            play.innerHTML = "Start";
+            play.innerHTML = "Resume";
         }
     },
     update : function(tick_text){
