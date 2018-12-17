@@ -1,13 +1,98 @@
+.body{
+  background-color: #6fc18d;
+  overflow:hidden;
+}
+
+#water{
+  display:inline;
+  height: 300px;
+  position:relative;
+  z-index: -2;
+/*background: url(http://svgur.com/i/5R7.svg)
+  left top/400px 100px repeat-x;*/
+  animation: water 8s linear infinite;
+  overflow:hidden;
+}
+
+#water2{
+  display:inline;
+  animation: water2 8s linear infinite;
+  position:relative;
+  overflow:hidden;
+  z-index: -1;
+  height:300px;
+}
+
+#wave{
+  position:relative;
+  height:100vh;
+  max-height:100vh;
+  overflow:hidden;
+}
+
+#timerbox{
+  top:150px;
+  position:absolute;
+  display:inline;
+}
+
+svg {
+  height:150px;
+}
+div.water-depth{
+  position:absolute;
+  background-color:rgba(47, 157, 166);
+  top:120px;
+  height:110%;
+  width:100%;
+  overflow:hidden;
+}
+@keyframes water2{
+  0% {right:0px; top:0px;}
+  25% {top:-20px;}
+  50%{top:0px;}
+  75%{top:-20px;}
+  100% {right:720px; top:0px;}
+}
+
+@keyframes water{
+  0% {left:-720px; top:-20px;}
+  25% {top:0px;}
+  50%{top:-20px;}
+  75%{top:0px;}
+  100% {left:0px; top:-20px;}
+}
+
+.fill{
+  background:rgb(15,55,42,0.3);
+  z-index:1;
+  height:100px;
+  width: 100px;
+  clip:#mypath;
+}
+
 div .border2{
     display: inline-block;
-    border: 3px solid black;
+    border: 5px solid #93e6c4;
     border-radius: 5px;
-    padding: 5px;
+    padding: px;
+    color: white;
+}
+
+.flex{
+  display:flex;
+  width:100%;
+  justify-content: center;
+  align-items:start;
 }
 
 div p{
     margin-bottom: 0px;
     padding: 0px;
+}
+
+nav{
+  position:relative;
 }
 
 .middle1{
@@ -25,19 +110,15 @@ nav div div.middle2 div button{
     width:100px;
     left:50%;
     margin-left: -50px;
-    
+
 }
 
-h4 {
-    margin-bottom: 0px;
-    margin-right:center;
-    display: inline-block;}
 
 body{
     padding-top:10px
 }
 ol {
-    padding: 5px 5px 5px 25px;
+    padding: 5px 10px 5px 25px;
     border: 3px solid black;
     border-radius: 5px;
     display: inline-block;
@@ -49,6 +130,13 @@ li input{
     font-size: 100%;
     margin: 5px;
     padding:0px 5px;
+    opacity: 50%;
+    background: white, 0.5;
+    background-color: white, 0.5;
+    background: rgb(255,255,255,0.2);
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
 
 #ticker {
@@ -68,19 +156,23 @@ li input{
   -moz-transform: scale(2); /* FF */
   -webkit-transform: scale(2); /* Safari and Chrome */
   -o-transform: scale(2); /* Opera */
+    background: rgb(255,255,255,0.2);
 }
 
-div.session_box{
-    text-align:center;
+div.session_box,{
+  vertical-align:top;
     padding:5px;
-    position: absolute;
-    width: 150px;
-    left:50%;
-    margin-left:-75px; ;
+    display:inline-block;
+    overflow:auto;
 }
 
+div.session_box p, div.session_box h4{
+  margin-bottom: 0px;
+  justify-content: center;
+  display: flex;}
+}
 
-div.time_box div.border2{
+div.time_box, div.border2{
     border-radius: 5px;
     padding: 0px 5px 0px 5px;
     overflow: auto;
@@ -94,11 +186,11 @@ div input.time_adjust {
     display:inline-block;
     width: 45px;
     height: 35px;
-    text-align:right;
-    float:right;
+    text-align: center;
     border-radius: 5px;
     position: relative;
     margin: 5px 0px;
+    opacity: 0.96;
 }
 
 div.time_box p {

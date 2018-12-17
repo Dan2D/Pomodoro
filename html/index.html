@@ -7,13 +7,47 @@
   <link rel="stylesheet" href="../css/custom.css">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
-<body>
+<body class="body">
+  <!--<div id="water"><div class="fill"></div></div>-->
+
+
 <!-- Goals for Pomodoro -->
   <nav>
-    <div class="container-fluid">
+    <div id="wave">
+    <svg width="200%" height="450" xmlns="http://www.w3.org/2000/svg">
+        <g id="water">
+    <defs>
+      <symbol id="mypath" >
+      <path stroke="rgba(97, 187, 195)" fill="rgba(97, 187, 195)" d="M10 80 Q 52.5 10, 95 80 T 180 80 T 270 80 T 360 80 T 450 80 T 540 80 T 630 80 T 720 80 T 810 80 l 0 100 l -900 0"/>
+    </symbol>
+    </defs>
+    <use xlink:href="#mypath" x="-720" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath" x="0" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath" x="720" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath" x="1440" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath" x="2160" y="0" width="1800px" height="250px"/>
+</g>
+<g id="water2">
+    <defs>
+      <symbol id="mypath2" >
+      <path stroke="rgba(47, 157, 166)" fill="rgba(47, 157, 166)" d="M10 80 Q 52.5 10, 95 80 T 180 80 T 270 80 T 360 80 T 450 80 T 540 80 T 630 80 T 720 80 T 810 80 l 0 100 l -900 0"/>
+    </symbol>
+    </defs>
+    <use xlink:href="#mypath2" x="0" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath2" x="720" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath2" x="1440" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath2" x="2160" y="0" width="1800px" height="250px"/>
+    <use xlink:href="#mypath2" x="2880" y="0" width="1800px" height="250px"/>
+  </g>
+  </svg>
+    <div class="water-depth">
+    </div>
+  </div>
+
+    <div id="timerbox" class="container-fluid">
       <div class="row top">
         <div class="col-lg-4">
-          <ol>
+          <ol class="border2">
               <h4>Goals List</h4>
             <li>
               <input type="text" id="goal" placeholder="Goal 1"> <input class="cbox" type="checkbox" name="cbox1">
@@ -32,9 +66,9 @@
             </li>
           </ol>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-4">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-4 flex">
             <div class="session_box border2">
                 <p >Current Session</p>
                 <h4 id="session"></h4>
@@ -44,21 +78,21 @@
         <div class="row middle1">
           <div class="col-lg-4">
           </div>
-          <div class="col-lg-5">
+          <div class="col-lg-4">
             <p id="ticker" class="border2">00 : 00 : 00</p>
           </div>
         </div>
         <div class="row middle2">
           <div class="col-lg-4">
           </div>
-          <div class="col-lg-5">
-            <button id="play_butt" onclick="timer.start()">Start</button>
+          <div class="col-lg-4">
+            <button class="btn" id="play_butt" onclick="timer.start()">Start</button>
           </div>
         </div>
         <div class="row bottom">
-          <div class="col-lg-9">
+          <div class="col-lg-8">
           </div>
-          <div class="col-lg-3 time_box">
+          <div class="col-lg-4 time_box flex">
             <div class="border2">
                 <table>
                     <tr>
@@ -66,15 +100,15 @@
                         <p>Session Length</p>
                       </td>
                       <td>
-                        <input type="number" name="session_length" class="time_adjust" min="0" max="99" value="25">
+                        <input type="number" name="session_length" class="time_adjust" min="1" max="99" value="25">
                       </td>
                     </tr>
                     <tr>
                        <td>
-                         <p>Short Break Length</p>  
-                       </td> 
+                         <p>Short Break Length</p>
+                       </td>
                         <td>
-                         <input type="number" name="sbreak_lenght" class="time_adjust" min="0" max="99" value="5">
+                         <input type="number" name="sbreak_lenght" class="time_adjust" min="1" max="99" value="5">
                         </td>
                     </tr>
                     <tr>
@@ -82,25 +116,24 @@
                           <p>Long Break Length</p>
                         </td>
                         <td>
-                          <input type="number" name="lbreak_length" class="time_adjust" min="0" max="99" value="20">
+                          <input type="number" name="lbreak_length" class="time_adjust" min="1" max="99" value="20">
                         </td>
-                    </tr>          
+                    </tr>
                 </table>
 
-                
+
 
             </div>
           </div>
         </div>
     </div>
-  </nav>    
-    
-   
+  </nav>
+
+
 
 
 </body>
     <script src="../script/script.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    
-</html>
 
+</html>
