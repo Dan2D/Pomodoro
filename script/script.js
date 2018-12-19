@@ -19,10 +19,12 @@ var session_assign = function() {
   if (counter === 5) {
     session_name = "Long Break";
     x = 2;
-  } else if (counter % 2 === 1) {
+  } 
+    else if (counter % 2 === 1) {
     session_name = "Short Break";
     x = 1;
-  } else {
+  } 
+    else {
     for (i = 0; i < 5; i++) {
       if (check[i].checked == false) {
         var session_name = goal_check[i].value;
@@ -32,10 +34,10 @@ var session_assign = function() {
     }
 
     if (session_name === "") {
-      session_name = "Thinking..."
+      session_name = "Thinking...";
     }
   }
-  session.innerHTML = session_name
+  session.innerHTML = session_name;
 }
 
 
@@ -46,6 +48,22 @@ var checking_checks = function() {
       crossout();
     })
   }
+}
+
+var rise = function(){
+     if (play.innerHTML === "Start" && counter > 0){
+            var end = new Date().getTime() + 4000;
+                setInterval(function(){
+                    var start = new Date().getTime();
+                    var time_diff2 = end - start;
+                    if(time_diff2 <= 0){
+                        clearInterval();
+                    }
+                    else{
+                        wave.style.top = 90 - (90*(1-(time_diff2/4000))) + "vh"; 
+                    }
+                })   
+            }
 }
 
 //Crossing out goals that have been checked/completed
@@ -60,7 +78,6 @@ var crossout = function() {
 }
 var notify = function() {
   notify_sound.play();
-  alert('Your session has finished!');
 }
 
 //This acts as a list of functions
@@ -70,7 +87,8 @@ var timer = {
     if (play.innerHTML === "Pause") {
       timer.pause();
       return;
-    } else if (play.innerHTML === "Start" || play.innerHTML === "Resume") {
+    } 
+      else if (play.innerHTML === "Start" || play.innerHTML === "Resume") {
       session_assign();
       if (parseInt(session_length[x].value) === 0) {
         alert("If only goals could be completed in an instant...")
@@ -111,16 +129,14 @@ var timer = {
         notify();
         play.innerHTML = "Start"
         counter += 1;
+        rise();
       }
     })
   },
 
   animate: function(time_percent){
     if(time_percent > 0){
-      wave.style.top = ((1-time_percent)*300) + "px";
-    }
-    else{
-      wave.style.top = 0 + "px";
+      wave.style.top = ((1-time_percent)*90) + "vh";
     }
   },
   convert_s: function(time) {
