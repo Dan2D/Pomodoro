@@ -4,7 +4,7 @@ var counter = 0;
 var play = document.getElementById("play_butt");
 var ticker = document.getElementById("ticker");
 var check = document.querySelectorAll("input[type=checkbox]");
-var goal_check = document.querySelectorAll("#goal");
+var goal_check = document.querySelectorAll("input[type=text]");
 var session = document.getElementById("session");
 var session_length = document.querySelectorAll(".time_adjust");
 var notify_sound = new Audio("../assets/audio/open-ended.mp3");

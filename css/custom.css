@@ -1,5 +1,5 @@
 .body{
-  background-color: #6fc18d;
+  background-color: #96e4b3;
   overflow:hidden;
 }
 
@@ -104,10 +104,6 @@ div.water-depth{
 }
 
 
-@-webkit-keyframes riseup{
-    100%{transform: translateY(-85vh);}
-}
-
 #timerbox{
   top:150px;
   position:absolute;
@@ -123,7 +119,7 @@ div.water-depth{
 
 div .border2{
     display: inline-block;
-    border: 5px solid #93e6c4;
+    border: 5px solid #72cbd8;
     border-radius: 5px;
     color: white;
 }
@@ -133,6 +129,7 @@ div .border2{
   width:100%;
   justify-content: center;
   align-items:start;
+    flex-direction:column;
 }
 
 div p{
@@ -155,11 +152,6 @@ nav div div.middle2{
 
 nav div div.middle2 div button{
     position: relative;
-    /*display: block;
-    top: calc(1% + 2vw);
-    width:calc(5px + 8vw);
-    left:50%;
-    margin-left: calc(-5px - 4vw);*/
     font-size: calc(5px + 1.5vw);
     min-height: 5px;
     min-width:15px;
@@ -231,7 +223,7 @@ div.session_box{
 div.session_box p, div.session_box h4{
   margin-bottom: 0px;
   justify-content: center;
-  display: flex;}
+  display: flex;
 }
 
 div.time_box, div.border2{
