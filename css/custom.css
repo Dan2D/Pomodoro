@@ -27,6 +27,9 @@ html, body{
     display:inline-block;
     position:relative;
     overflow-x:hidden;
+    -ms-animation: cloud 60s linear infinite;
+    -moz-animation: cloud 60s linear infinite;
+    -o-animation: cloud 60s linear infinite;
     -webkit-animation: cloud 60s linear infinite;
     animation: cloud 60s linear infinite;
 }
@@ -48,18 +51,27 @@ html, body{
 
 #water1{
   z-index: 0;
+  -ms-animation: water1 8s linear infinite;
+  -moz-animation: water1 8s linear infinite;
+  -o-animation: water1 8s linear infinite;
   -webkit-animation: water1 8s linear infinite;
   animation: water1 8s linear infinite;
   overflow:hidden;
 }
 
 #water2{
+  -ms-animation: water2 8s linear infinite;
+  -moz-animation: water2 8s linear infinite;
+  -o-animation: water2 8s linear infinite;
   -webkit-animation: water2 8s linear infinite;
   animation: water2 8s linear infinite;
   z-index: -1;
 }
 
 #water3{
+  -ms-animation: water3 8s linear infinite;
+  -moz-animation: water3 8s linear infinite;
+  -o-animation: water3 8s linear infinite;
   -webkit-animation: water3 8s linear infinite;
   animation: water3 8s linear infinite;
   position:absolute;
@@ -68,8 +80,11 @@ html, body{
 
 
 .rise{
-    -webkit-animation: riseup 2s linear;
-    animation: riseup 2s linear;
+  -ms-animation: riseup 2s linear;
+  -moz-animation: riseup 2s linear;
+  -o-animation: riseup 2s linear;
+  -webkit-animation: riseup 2s linear;
+  animation: riseup 2s linear;
 }
 
 svg {
@@ -85,15 +100,60 @@ div.water-depth{
 }
 
 @keyframes cloud{
-    100%{transform: translateX(3600px);}
+  100%{transform: translateX(3600px);}
+}
+
+@-ms-keyframes cloud{
+  100%{transform: translateX(3600px);}
+    
+}
+
+@-moz-keyframes cloud{
+  100%{transform: translateX(3600px);}
+    
+}
+
+@-o-keyframes cloud{
+  100%{transform: translateX(3600px);}
+}
+
+@-webkit-keyframes cloud{
+  100%{transform: translateX(3600px);}
+}
+
+
+
+@-ms-keyframes water1{
+  0% {transform: translateX(180px) translateX(0px);}
+  25% {transform: translateX(360px) translateY(-20px);}
+  50%{transform: translateX(540px) translateY(0px);}
+  75%{transform: translateX(720px) translateY(-20px);}
+  100% {transform: translateX(900px) translateY(0px);}
+ 
+}
+
+@-moz-keyframes water1{
+  0% {transform: translateX(180px) translateX(0px);}
+  25% {transform: translateX(360px) translateY(-20px);}
+  50%{transform: translateX(540px) translateY(0px);}
+  75%{transform: translateX(720px) translateY(-20px);}
+  100% {transform: translateX(900px) translateY(0px);}
+}
+
+@-o-keyframes water1{
+  0% {transform: translateX(180px) translateX(0px);}
+  25% {transform: translateX(360px) translateY(-20px);}
+  50%{transform: translateX(540px) translateY(0px);}
+  75%{transform: translateX(720px) translateY(-20px);}
+  100% {transform: translateX(900px) translateY(0px);}
 }
 
 @-webkit-keyframes water1{
-  0% {left:-720px; top:-20px;}
-  25% {top:0px;}
-  50%{top:-20px;}
-  75%{top:0px;}
-  100% {left:0px; top:-20px;}
+  0% {transform: translateX(180px) translateX(0px);}
+  25% {transform: translateX(360px) translateY(-20px);}
+  50%{transform: translateX(540px) translateY(0px);}
+  75%{transform: translateX(720px) translateY(-20px);}
+  100% {transform: translateX(900px) translateY(0px);}
 }
 
 @keyframes water1{
@@ -104,12 +164,36 @@ div.water-depth{
   100% {transform: translateX(900px) translateY(0px);}
 }
 
+@-ms-keyframes water2{
+  0% {transform: translateX(-180px) translateY(0px);}
+  25% {transform: translateX(-360px) translateY(-20px);}
+  50%{transform: translateX(-540px) translateY(0px);}
+  75%{transform: translateX(-720px) translateY(-20px);}
+  100% {transform: translateX(-900px) translateY(0px);}
+}
+
+@-moz-keyframes water2{
+  0% {transform: translateX(-180px) translateY(0px);}
+  25% {transform: translateX(-360px) translateY(-20px);}
+  50%{transform: translateX(-540px) translateY(0px);}
+  75%{transform: translateX(-720px) translateY(-20px);}
+  100% {transform: translateX(-900px) translateY(0px);} 
+}
+
+@-o-keyframes water2{
+  0% {transform: translateX(-180px) translateY(0px);}
+  25% {transform: translateX(-360px) translateY(-20px);}
+  50%{transform: translateX(-540px) translateY(0px);}
+  75%{transform: translateX(-720px) translateY(-20px);}
+  100% {transform: translateX(-900px) translateY(0px);}
+}
+
 @-webkit-keyframes water2{
-  0% {right:0px; top:0px;}
-  25% {top:-20px;}
-  50%{top:0px;}
-  75%{top:-20px;}
-  100% {right:720px; top:0px;}
+  0% {transform: translateX(-180px) translateY(0px);}
+  25% {transform: translateX(-360px) translateY(-20px);}
+  50%{transform: translateX(-540px) translateY(0px);}
+  75%{transform: translateX(-720px) translateY(-20px);}
+  100% {transform: translateX(-900px) translateY(0px);}
 }
 
 @keyframes water2{
@@ -120,12 +204,36 @@ div.water-depth{
   100% {transform: translateX(-900px) translateY(0px);}
 }
 
+@-ms-keyframes water3{
+  0% {transform: translateX(90px) translateX(0px);}
+  25% {transform: translateX(180px) translateY(-20px);}
+  50%{transform: translateX(270px) translateY(0px);}
+  75%{transform: translateX(360px) translateY(-20px);}
+  100% {transform: translateX(450px) translateY(0px);}   
+}
+
+@-moz-keyframes water3{
+   0% {transform: translateX(90px) translateX(0px);}
+  25% {transform: translateX(180px) translateY(-20px);}
+  50%{transform: translateX(270px) translateY(0px);}
+  75%{transform: translateX(360px) translateY(-20px);}
+  100% {transform: translateX(450px) translateY(0px);}   
+}
+
+@-o-keyframes water3{
+  0% {transform: translateX(90px) translateX(0px);}
+  25% {transform: translateX(180px) translateY(-20px);}
+  50%{transform: translateX(270px) translateY(0px);}
+  75%{transform: translateX(360px) translateY(-20px);}
+  100% {transform: translateX(450px) translateY(0px);}
+}
+
 @-webkit-keyframes water3{
-  0% {left:-720px; top:-20px;}
-  25% {top:0px;}
-  50%{top:-20px;}
-  75%{top:0px;}
-  100% {left:0px; top:-20px;}
+  0% {transform: translateX(90px) translateX(0px);}
+  25% {transform: translateX(180px) translateY(-20px);}
+  50%{transform: translateX(270px) translateY(0px);}
+  75%{transform: translateX(360px) translateY(-20px);}
+  100% {transform: translateX(450px) translateY(0px);}
 }
 
 @keyframes water3{
@@ -184,11 +292,6 @@ nav div div.middle2{
 
 nav div div.middle2 div button{
     position: relative;
-    /*display: block;
-    top: calc(1% + 2vw);
-    width:calc(5px + 8vw);
-    left:50%;
-    margin-left: calc(-5px - 4vw);*/
     font-size: calc(5px + 1.5vw);
     min-height: 5px;
     min-width:15px;
@@ -296,10 +399,9 @@ div input.time_adjust {
     display:inline-block;
     width: 45px;
     height: 35px;
-    text-align: right;
+    text-align: center;
     position: relative;
     margin: 5px 0px;
-    padding-left:13px;
 }
 
 div.time_box p {
@@ -310,11 +412,11 @@ div.time_box p {
 }
 
 
-@media all and (max-width: 991px){
+@media all and (orientation: portrait){
     html, body{
         height:100%;
         overflow-x:hidden;
-        overflow-y:auto;
+        overflow-y:visible;
     }
     ol.goal_box{
         position:relative;
