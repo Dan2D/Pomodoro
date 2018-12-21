@@ -60,7 +60,7 @@ var rise = function(){
                         clearInterval();
                     }
                     else{
-                        wave.style.transform = "translateY(" + (70 - (70*(1-(time_diff2/4000)))) + "vh)"; 
+                        wave.style.transform = "translateY(" + (70 - (70*(1-(time_diff2/4000)))) + "%)"; 
                     }
                 })   
             }
@@ -136,7 +136,7 @@ var timer = {
 
   animate: function(time_percent){
     if(time_percent > 0){
-      wave.style.transform = "translateY(" + ((1-time_percent)*70) + "vh)";
+      wave.style.transform = "translateY(" + ((1-time_percent)*70) + "%)";
     }
   },
   convert_s: function(time) {

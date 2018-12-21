@@ -1,12 +1,14 @@
 html, body{
     overflow: hidden;
     height:100%;
-    min-height: 100%;
+    min-height:100%;
+    width:100%;
 }
+
 .body{
-  background-color: #99e8bf;
-    min-height: 100%;
-    width:100vw;
+    background-color: #99e8bf;
+    min-height:100%;
+    position:absolute;
 }
 
 .water{
@@ -29,6 +31,21 @@ html, body{
     animation: cloud 60s linear infinite;
 }
 
+.wave-container{
+    height:100%;
+    width:100%;
+    position:absolute;
+    overflow:hidden;
+}
+
+#wave{
+  position:relative;
+  top:10px;
+  height:100%;
+  overflow:hidden;
+  width:100%;
+}
+
 #water1{
   z-index: 0;
   -webkit-animation: water1 8s linear infinite;
@@ -49,13 +66,6 @@ html, body{
   z-index: -2;
 }
 
-#wave{
-  position:relative;
-    top:-10px;
-  height:80vh;
-  overflow:hidden;
-  width:100%;
-}
 
 .rise{
     -webkit-animation: riseup 2s linear;
@@ -69,7 +79,7 @@ svg {
 div.water-depth{
   position:relative;
   background-color:rgba(47, 157, 166);
-  height:90%;
+  height:100%;
   width:100vw;
   overflow:hidden;
 }
@@ -289,7 +299,7 @@ div input.time_adjust {
     text-align: right;
     position: relative;
     margin: 5px 0px;
-    padding-right:2px;
+    padding-left:13px;
 }
 
 div.time_box p {
@@ -302,8 +312,9 @@ div.time_box p {
 
 @media all and (max-width: 991px){
     html, body{
-        height:100vh;
+        height:100%;
         overflow-x:hidden;
+        overflow-y:auto;
     }
     ol.goal_box{
         position:relative;
@@ -313,14 +324,27 @@ div.time_box p {
 
     }
     .col-lg-4{
-        top:-5vh;
+        top:-10vh;
+    }
+    
+    .buffer{
+        max-height:10px;
+    }
+    
+    div input.time_adjust {
+        text-align: center;
+        padding: 0px;
     }
     
     #wave{
         position:relative;
-        top:-10px;
-        height:110vh;
+        top:10px;
+        height:100%;
         overflow:hidden;
         width:100%;
+    }
+    
+    div.row.bottom{
+        height:0px;
     }
 }
