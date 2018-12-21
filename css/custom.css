@@ -1,6 +1,12 @@
+html, body{
+    overflow: hidden;
+    height:100%;
+    min-height: 100%;
+}
 .body{
-  background-color: #96e4b3;
-  overflow:hidden;
+  background-color: #99e8bf;
+    min-height: 100%;
+    width:100vw;
 }
 
 .water{
@@ -8,6 +14,19 @@
     position: relative;
     display:inline;
     overflow:hidden;
+}
+
+.clouds{
+    width: 5400px;
+    left:-3400px;
+    height: 200px;
+    background: url("../images/cloud-wide2.png");
+    background-repeat:repeat-x;
+    display:inline-block;
+    position:relative;
+    overflow-x:hidden;
+    -webkit-animation: cloud 60s linear infinite;
+    animation: cloud 60s linear infinite;
 }
 
 #water1{
@@ -26,15 +45,16 @@
 #water3{
   -webkit-animation: water3 8s linear infinite;
   animation: water3 8s linear infinite;
-    position:absolute;
+  position:absolute;
   z-index: -2;
 }
 
 #wave{
   position:relative;
-  height:100vh;
-  max-height:100vh;
+    top:-10px;
+  height:80vh;
   overflow:hidden;
+  width:100%;
 }
 
 .rise{
@@ -47,12 +67,15 @@ svg {
 }
 
 div.water-depth{
-  position:absolute;
+  position:relative;
   background-color:rgba(47, 157, 166);
-  top:120px;
-  height:110%;
-  width:100%;
+  height:90%;
+  width:100vw;
   overflow:hidden;
+}
+
+@keyframes cloud{
+    100%{transform: translateX(3600px);}
 }
 
 @-webkit-keyframes water1{
@@ -160,14 +183,13 @@ nav div div.middle2 div button{
     min-height: 5px;
     min-width:15px;
     justify-content: center;
-    z-index: 3;
-
 }
 
 
 body{
     padding-top:10px
 }
+
 ol {
     padding: 5px 10px 5px 25px;
     border: 3px solid black;
@@ -179,25 +201,24 @@ ol {
 /*Goals List*/
 li input{
     line-height:30px;
-    font-size: calc(5px + 1vw);
+    font-size: 15px;
     margin: 5px;
     padding:0px 5px;
+}
+
+
+li input, .time_adjust{
     background: rgb(255,255,255,0.2);
     border: none;
     border-radius: 5px;
     color: white;
 }
 
-td {
-    padding:5px;
-}
-
-
 #ticker {
     display: flex;
     position: absolute;
     bottom:10px;
-    font-size: calc(5px + 4vw);
+    font-size: calc(20px + 2vw);
     justify-content:center;
     padding-left:5px;
     padding-right: 5px;
@@ -217,7 +238,6 @@ td {
 }
 
 div.session_box{
-  vertical-align:top;
     padding:5px;
     display:inline-block;
     justify-content: center;
@@ -230,31 +250,77 @@ div.session_box p, div.session_box h4{
   display: flex;}
 }
 
+
+
 div.time_box, div.border2{
     border-radius: 5px;
     padding: 0px 5px 0px 5px;
     overflow: auto;
     position:relative;
-    width: 200px;
+    width: 100px;
     left:50%;
     margin-left: -100px;
+}
+
+.tbl_container{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content:center;
+    z-index:5;
+}
+
+.tblcol {
+    display:flex;
+    justify-content:flex-end;
+    flex-flow:row nowrap;
+    padding:5px;
+    align-items:baseline;
+}
+
+.item{
+    vertical-align:center;
+    padding:5px;
 }
 
 div input.time_adjust {
     display:inline-block;
     width: 45px;
     height: 35px;
-    text-align: center;
-    border-radius: 5px;
+    text-align: right;
     position: relative;
     margin: 5px 0px;
-    opacity: 0.96;
+    padding-right:2px;
 }
 
 div.time_box p {
-    display: inline-block;
     position:relative;
     margin-bottom: 0px;
     text-align: right;
-    float:right;
+    display:block;
+}
+
+
+@media all and (max-width: 991px){
+    html, body{
+        height:100vh;
+        overflow-x:hidden;
+    }
+    ol.goal_box{
+        position:relative;
+        left:50%;
+        margin-left:-122px;
+        min-width: 200px;
+
+    }
+    .col-lg-4{
+        top:-5vh;
+    }
+    
+    #wave{
+        position:relative;
+        top:-10px;
+        height:110vh;
+        overflow:hidden;
+        width:100%;
+    }
 }
