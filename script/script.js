@@ -6,14 +6,21 @@ var ticker = document.getElementById("ticker");
 var check = document.querySelectorAll("input[type=checkbox]");
 var goal_check = document.querySelectorAll("input[type=text]");
 var session = document.getElementById("session");
+var session_name = document.querySelectorAll("div.item p");
 var session_length = document.querySelectorAll(".time_adjust");
 var notify_sound = new Audio("../assets/audio/open-ended.mp3");
 var wave = document.getElementById("wave");
+var alert = document.querySelector('div.alert span');
 
 window.onload = function() {
   checking_checks();
 }
 
+function toggleAlert(){
+    //$(".alert").toggleClass('in out'); 
+    $('.alert').fadeOut();
+    return false; // Keep close.bs.alert event from removing from DOM
+}
 
 var session_assign = function() {
   if (counter === 5) {
@@ -33,7 +40,7 @@ var session_assign = function() {
       }
     }
 
-    if (session_name === "") {
+    if (session_name === "" && session_length[x].value != 0) {
       session_name = "Thinking...";
     }
   }
@@ -78,6 +85,9 @@ var crossout = function() {
 }
 var notify = function() {
   notify_sound.play();
+  alert.innerHTML = session_name[x].innerHTML + " Complete!";
+  $('.alert').fadeIn();
+  $('#bsalert').on('close.bs.alert', toggleAlert)
 }
 
 //This acts as a list of functions
@@ -91,7 +101,9 @@ var timer = {
       else if (play.innerHTML === "Start" || play.innerHTML === "Resume") {
       session_assign();
       if (parseInt(session_length[x].value) === 0) {
-        alert("If only goals could be completed in an instant...")
+        alert.innerHTML = "If only goals could be completed in an instant...";
+        $('.alert').fadeIn();
+        $('#bsalert').on('close.bs.alert', toggleAlert)
         return;
       }
       play.innerHTML = "Pause";

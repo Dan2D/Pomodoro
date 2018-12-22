@@ -244,6 +244,10 @@ div.water-depth{
   100% {transform: translateX(450px) translateY(0px);}
 }
 
+.alert_cust{
+    width:300px;
+    z-index:7;
+}
 
 .timerbox{
   top:150px;
@@ -263,13 +267,28 @@ div .border2{
     border: 5px solid #72cbd8;
     border-radius: 5px;
     color: white;
+    text-shadow:#ccb4b4 1px 2px 18px;
 }
 
 .flex{
   display:flex;
   width:100%;
+  flex-direction:column;
+}
+
+.f-start{
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+
+.f-cntr{
   justify-content: center;
-  align-items:start;
+  align-items:center;
+}
+
+.f-end{
+  justify-content: flex-end;
+  align-items:flex-end;
 }
 
 div p{
@@ -352,6 +371,7 @@ li input, .time_adjust{
 
 div.session_box{
     padding:5px;
+    margin-right:35px;
     display:inline-block;
     justify-content: center;
     overflow:auto;
@@ -420,13 +440,23 @@ div.time_box p {
     }
     ol.goal_box{
         position:relative;
-        left:50%;
-        margin-left:-122px;
+        margin:0;
         min-width: 200px;
+        margin-bottom: 10px;
 
     }
+    
+    .f-start, .f-end {
+        justify-content:center;
+        align-items:center;
+    }
+    
+    div.session_box{
+        margin-right:0px;
+    }
+    
     .col-lg-4{
-        top:-10vh;
+        top:-135px;
     }
     
     .buffer{
