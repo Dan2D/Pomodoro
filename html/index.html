@@ -58,11 +58,16 @@
         </div>
       </div>
     </div>
-
+    <div class="flex f-cntr">
+        <div class="alert alert-success alert_cust collapse" role="alert" id="bsalert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="Close">&times;</a>
+            <span>Test</span>
+        </div>
+    </div>
       <!--Goals Check List-->
     <div class="container-fluid timerbox">
       <div class="row top">
-        <div class="col-lg-4">
+        <div class="col-lg-4 flex f-start">
           <ol class="border2 goal_box">
               <h4>Goals List</h4>
             <li>
@@ -91,7 +96,7 @@
         </div>
           
           <!--Current Session Status Box-->
-        <div class="col-lg-4 flex">
+        <div class="col-lg-4 flex f-end">
             <div class="session_box border2">
                 <p >Current Session</p>
                 <h4 id="session"></h4>
@@ -103,14 +108,14 @@
           </div>
             
             <!--Countdown Timer Box-->
-          <div class="col-lg-4 flex">
+          <div class="col-lg-4 flex f-cntr">
             <p id="ticker" class="border2">00 : 00 : 00</p>
           </div>
         </div>
         <div class="row middle2">
           <div class="col-lg-4">
           </div>
-          <div class="col-lg-4 flex">
+          <div class="col-lg-4 flex f-cntr">
             <button class="btn" id="play_butt" onclick="timer.start()">Start</button>
           </div>
         </div>
@@ -119,7 +124,7 @@
           </div>
             
             <!--Session Length Box-->
-          <div class="col-lg-4 time_box flex">
+          <div class="col-lg-4 time_box flex f-end">
                 <div class="border2 tbl_container">
                     <div class="tblrow">
                         <div class="tblcol">
@@ -158,6 +163,7 @@
     </div>
 </body>
     <script src="../script/script.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 
 </html>
