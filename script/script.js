@@ -16,6 +16,15 @@ window.onload = function() {
   checking_checks();
 }
 
+//function to set height and width of device without mobile keyboard affecting layout
+(function(){
+  var h = Math.max(document.documentElement.clientHeight || 0);
+  var w = Math.max(document.documentElement.clientWidth || 0);
+  $("html").css({"width": w, "height": h});
+  $("body").css({"width": w, "height": h});
+  }());
+
+
 function toggleAlert(){
     //$(".alert").toggleClass('in out'); 
     $('.alert').fadeOut();
