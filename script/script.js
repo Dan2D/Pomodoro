@@ -23,7 +23,17 @@ window.onload = function() {
   $("html").css({"width": w, "height": h});
   $("body").css({"width": w, "height": h});
   }());
+  
+  $(document).ready(function(){
+    document.ontouchmove = function(e){
+      e.preventDefault;
+    }
+});
 
+input.onfocus = function () {
+  window.scrollTo(0, 0);
+  document.body.scrollTop = 0;
+}
 
 function toggleAlert(){
     //$(".alert").toggleClass('in out'); 
